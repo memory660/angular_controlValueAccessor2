@@ -90,15 +90,20 @@ export class CountrySelectorComponent implements ControlValueAccessor {
     this.onChanged(code);
   }
 
+  //  Écrire une nouvelle valeur dans l'élément.
   writeValue(value: string): void {
     this.selected = value ?? 'IN';
   }
+  // la fonction à appeler lorsque le contrôle reçoit un événement de modification.
   registerOnChange(fn: any): void {
     this.onChanged = fn;
   }
+  // la fonction à appeler lorsque le contrôle reçoit un événement tactile
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
+  // Cette fonction est appelée lorsque l'état du contrôle passe de ou à "DISABLED".
+  // Selon la valeur, elle activera ou désactivera l'élément DOM approprié.
   setDisabledState(isDisabled: boolean) {
     this.disabled = isDisabled;
   }
